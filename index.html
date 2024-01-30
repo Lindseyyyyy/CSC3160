@@ -1,4 +1,30 @@
-<audio id="audioPlayer" controls>
-    <source src="https://github.com/Lindseyyyyy/CSC3160/raw/main/CSC3160_assign1_recording.wav" type="audio/wav">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>播放音频</title>
+</head>
+<body>
+
+<audio controls>
+    <source src="https://raw.githubusercontent.com/Lindseyyyyy/CSC3160/main/CSC3160_assign1_recording.wav" type="audio/wav">
     Your browser does not support the audio element.
 </audio>
+
+<script>
+    // 获取音频元素
+    var audioPlayer = document.querySelector('audio');
+
+    // 当页面加载完成后，触发播放
+    document.addEventListener('DOMContentLoaded', function() {
+        audioPlayer.play().catch(error => {
+            // 自动播放被阻止，可以在此处理错误或提醒用户手动播放
+            console.error('自动播放被阻止:', error);
+        });
+    });
+</script>
+
+</body>
+</html>
+
